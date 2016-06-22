@@ -14,14 +14,19 @@ $ npm install --save hapi-good-winston
 ```javascript
 const Hapi = require('hapi');
 const winston = require('winston');
-const goodWinston =  require('hapi-good-winston');
+const goodWinston =  require('hapi-good-winston').goodWinston;
 const server = new Hapi.Server();
 server.connection();
 
 const options = {
     reporters: {
         winston: [goodWinston(winston)],
-    }
+        winston2: [{
+            module: 'hapi-good-winston',
+            name: 'goodWinston',
+            args: [winston],
+        }],
+    },
 };
 
 server.register({

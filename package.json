@@ -2,9 +2,12 @@
   "name": "hapi-good-winston",
   "version": "0.1.0",
   "description": "A hapi good reporter to log events with winston",
-  "main": "lib/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "lab -m 5000 -t 100 -v -La code"
+    "test": "tape -r babel-register tests/**/*.js",
+    "build": "babel --presets babel-preset-es2015 lib -d dist",
+    "watch": "babel --presets babel-preset-es2015 lib -d dist -w --source-maps",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -13,7 +16,9 @@
   "keywords": [
     "hapi",
     "good",
+    "goodjs",
     "winston",
+    "winstonjs",
     "reporter",
     "good-reporter",
     "hapijs"
@@ -25,7 +30,10 @@
   },
   "homepage": "https://github.com/alexandrebodin/hapi-good-winston",
   "devDependencies": {
-    "code": "^3.0.0",
-    "lab": "^10.7.1"
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
+    "tape": "^4.5.1"
   }
 }
