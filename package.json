@@ -4,9 +4,9 @@
   "description": "A hapi good reporter to log events with winston",
   "main": "./dist/index.js",
   "scripts": {
-    "test": "tape -r babel-register tests/**/*.js",
-    "build": "babel --presets babel-preset-es2015 lib -d dist",
-    "watch": "babel --presets babel-preset-es2015 lib -d dist -w --source-maps",
+    "test": "tape -r babel-register test/**/*.js | tap-dot",
+    "build": "babel lib -d dist --source-maps",
+    "watch": "babel lib -d dist -w --source-maps",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -23,17 +23,32 @@
     "good-reporter",
     "hapijs"
   ],
-  "author": "Alexandre BODIN <bodin.alex@gmail.com>",
+  "author": "Alexandre BODIN <bodin.alex@gmail.com> (https://github.com/alexandrebodin)",
+  "maintainers": [
+    {
+      "name": "alexandrebodin",
+      "email": "bodin.alex@gmail.com",
+      "url": "https://github.com/alexandrebodin"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexandrebodin/hapi-good-winston/issues"
   },
   "homepage": "https://github.com/alexandrebodin/hapi-good-winston",
+  "dependencies": {
+    "hapi": ">=10.x",
+    "winston": ">=2.x"
+  },
+  "peerDependencies": {
+    "hapi": ">=10.x",
+    "winston": ">=2.x"
+  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
-    "babel-eslint": "^6.0.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.9.0",
+    "tap-dot": "^1.0.5",
     "tape": "^4.5.1"
   }
 }
