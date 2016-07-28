@@ -1,16 +1,16 @@
 import test from 'tape';
 import handlers from '../lib/handlers';
 import fixtures from './fixtures';
-import { logLvl, log, goodWinston } from '..';
+import { defaultLevels, log, goodWinston }  from '../lib';
 
 test('check logLevels', t => {
     t.plan(5);
 
-    t.equal(logLvl.ops, 'debug');
-    t.equal(logLvl.log, 'info');
-    t.equal(logLvl.error, 'error');
-    t.equal(logLvl.request, 'info');
-    t.equal(logLvl.response, 'info');
+    t.equal(defaultLevels.ops, 'debug');
+    t.equal(defaultLevels.log, 'info');
+    t.equal(defaultLevels.error, 'error');
+    t.equal(defaultLevels.request, 'info');
+    t.equal(defaultLevels.response, 'info');
 });
 
 test('checking logging function', t => {
@@ -50,7 +50,7 @@ test('checking stream instance', t => {
 test('checking throws if not logger or not log method on logger', t => {
     t.plan(6);
 
-    const err = new Error('You must pass a valid winston logger');
+    const err = new TypeError('You must pass a valid winston logger');
     t.throws(goodWinston, err);
     t.throws(goodWinston.bind({}), err);
     t.throws(goodWinston.bind(() => {}), err);
@@ -121,4 +121,20 @@ test('testing response handler', t => {
     };
 
     t.deepEqual(handlers[fixtures.response.event](fixtures.response), expected);
+});
+
+
+test('testing custom log levels', t => {
+    t.plan(1);
+
+    const expectedLogLevels = {
+        ops: 'silly',
+        response: 'silly',
+        log: 'silly',
+        error: 'silly',
+        request: 'silly',
+    };
+
+    const stream = goodWinston({ log: () => {}}, { levels: expectedLogLevels });
+    t.deepEqual(stream.levels, expectedLogLevels);
 });
