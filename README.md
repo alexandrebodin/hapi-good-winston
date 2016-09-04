@@ -7,6 +7,7 @@ A good reporter to send and log events with winston
 [![license](https://img.shields.io/github/license/alexandrebodin/hapi-good-winston.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 [![CircleCI](https://img.shields.io/circleci/project/alexandrebodin/hapi-good-winston.svg?style=flat-square)](https://circleci.com/gh/alexandrebodin/hapi-good-winston)
+[![Dependency Status](https://dependencyci.com/github/alexandrebodin/hapi-good-winston/badge?style=flat-square)](https://dependencyci.com/github/alexandrebodin/hapi-good-winston)
 
 [![Issues](https://img.shields.io/github/issues-raw/alexandrebodin/hapi-good-winston.svg?style=flat-square)](https://github.com/alexandrebodin/hapi-good-winston/issues)
 [![PR](https://img.shields.io/github/issues-pr-raw/alexandrebodin/hapi-good-winston.svg?style=flat-square)](https://github.com/alexandrebodin/hapi-good-winston/pulls)
