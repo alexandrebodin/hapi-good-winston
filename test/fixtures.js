@@ -6,6 +6,14 @@ const log = {
     pid: 64291,
 };
 
+const logObjData = {
+    event: 'log',
+    timestamp: 1458264810957,
+    tags: ['log', 'info'],
+    data: { param: [1, 'some data', false] },
+    pid: 64291,
+};
+
 const ops = {
     event: 'ops',
     timestamp: 1458264810957,
@@ -67,6 +75,17 @@ const request = {
     path: '/',
 };
 
+const requestObjData = {
+    event: 'request',
+    timestamp: 1458264810957,
+    tags: ['user', 'info'],
+    data: [{route: '/call', query: 'a=1&b=2'}, 'payload'],
+    pid: 64291,
+    id: '1419005623332:new-host.local:48767:i3vrb3z7:10000',
+    method: 'post',
+    path: '/api/v1/call',
+};
+
 const error = {
     event: 'error',
     timestamp: 1458264810957,
@@ -82,8 +101,10 @@ const error = {
 
 export default {
     request,
+    requestObjData,
     error,
     response,
     ops,
     log,
+    logObjData,
 };
