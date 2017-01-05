@@ -89,6 +89,16 @@ test('testing log handler', t => {
     t.deepEqual(handlers[fixtures.log.event](fixtures.log), expected);
 });
 
+test('testing log handler with object data', t => {
+    t.plan(1);
+
+    const expected = {
+        msg: `[log,info] {"param":[1,"some data",false]}`,
+    };
+
+    t.deepEqual(handlers[fixtures.logObjData.event](fixtures.logObjData), expected);
+});
+
 test('testing error handler', t => {
     t.plan(1);
 
@@ -111,6 +121,16 @@ test('testing request handler', t => {
     };
 
     t.deepEqual(handlers[fixtures.request.event](fixtures.request), expected);
+});
+
+test('testing request handler with object data', t => {
+    t.plan(1);
+
+    const expected = {
+        msg: `[user,info] POST /api/v1/call [{"route":"/call","query":"a=1&b=2"},"payload"]`,
+    };
+
+    t.deepEqual(handlers[fixtures.requestObjData.event](fixtures.requestObjData), expected);
 });
 
 test('testing response handler', t => {
