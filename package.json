@@ -37,15 +37,15 @@
   },
   "homepage": "https://github.com/alexandrebodin/hapi-good-winston",
   "dependencies": {
-    "good": ">= 7.x",
-    "hapi": ">=10.x",
+    "good": ">=7.x < 8.x",
+    "hapi": ">=10.x <17.x",
     "json-stringify-safe": "^5.0.1",
-    "winston": ">=2.x"
+    "winston": ">=2.x <3.x"
   },
   "peerDependencies": {
-    "hapi": ">=10.x",
-    "winston": ">=2.x",
-    "good": ">= 7.x"
+    "hapi": ">=10.x <17.x",
+    "winston": ">=2.x <3.x",
+    "good": ">=7.x <8.x"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
