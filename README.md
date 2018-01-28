@@ -26,7 +26,6 @@ import winston from 'winston';
 import goodWinston from 'hapi-good-winston';
 
 const server = new Server();
-server.connection();
 
 // Set winston minimum log level to debug
 winston.level = 'debug';
@@ -57,7 +56,7 @@ const options = {
 };
 
 server.register({
-    register: require('good'),
+    plugin: require('good'),
     options,
 }, (err) => {
 
@@ -70,13 +69,6 @@ server.register({
 
 });
 ```
-
-# Todo
-
-- [x] Adding custom log levels to offer the possibility of using winston's custom log levels
-- [] Filtering events
-- [] Adding message customization
-- [] Adding message templating
 
 # Links
 
