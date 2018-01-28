@@ -12,6 +12,13 @@ A good reporter to send and log events with winston
 [![Issues](https://img.shields.io/github/issues-raw/alexandrebodin/hapi-good-winston.svg?style=flat-square)](https://github.com/alexandrebodin/hapi-good-winston/issues)
 [![PR](https://img.shields.io/github/issues-pr-raw/alexandrebodin/hapi-good-winston.svg?style=flat-square)](https://github.com/alexandrebodin/hapi-good-winston/pulls)
 
+## Disclaimer
+
+Versions starting from 2.0.0-rc1 will only support good >= v8 and hapi >= v17
+
+- To install a version comptabile with hapi v17 use `2.0.0-rc1`
+- Use `1.*` for version prior to hapi v17
+
 ## Installation
 
 ```bash
