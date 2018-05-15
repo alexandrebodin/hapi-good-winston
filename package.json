@@ -1,13 +1,12 @@
 {
   "name": "hapi-good-winston",
-  "version": "2.0.0-rc1",
+  "version": "2.0.1",
   "description": "A hapi good reporter to log events with winston",
   "main": "./dist/index.js",
   "scripts": {
     "test": "tape -r babel-register test/**/*.js | tap-dot",
     "build": "babel lib -d dist --source-maps",
     "watch": "babel lib -d dist -w --source-maps",
-    "prepublish": "npm run build",
     "prepare": "npm run build"
   },
   "repository": {

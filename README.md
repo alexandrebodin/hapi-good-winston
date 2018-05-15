@@ -14,9 +14,8 @@ A good reporter to send and log events with winston
 
 ## Disclaimer
 
-Versions starting from 2.0.0-rc1 will only support good >= v8 and hapi >= v17
+Hapi-good-winston `2` only support good >= 8 and hapi >= 17
 
-- To install a version comptabile with hapi v17 use `2.0.0-rc1`
 - Use `1.*` for version prior to hapi v17
 
 ## Installation
