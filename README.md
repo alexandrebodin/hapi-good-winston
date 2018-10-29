@@ -16,7 +16,7 @@ A good reporter to send and log events with winston
 
 Hapi-good-winston `2` only support good >= 8 and hapi >= 17
 
-- Use `1.*` for version prior to hapi v17
+-   Use `1.*` for version prior to hapi v17
 
 ## Installation
 
@@ -31,56 +31,63 @@ import { Server } from 'hapi';
 import winston from 'winston';
 import goodWinston from 'hapi-good-winston';
 
+const logger = winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    transports: [new winston.transports.Console()],
+});
+
 const server = new Server();
 
 // Set winston minimum log level to debug
-winston.level = 'debug';
+// winston.level = 'debug';
 
- // Only the 'response' and 'error' event levels will be overwritten
+// Only the 'response' and 'error' event levels will be overwritten
 const goodWinstonOptions = {
     levels: {
         response: 'debug',
         error: 'info',
-    }
-};
-
-const options = {
-    reporters: {
-        // Simple and straight forward usage
-        winston: [goodWinston(winston)],
-
-        // Adding some customization configuration
-        winstonWithLogLevels: [goodWinston(winston, goodWinstonOptions)],
-
-        // This example simply illustrates auto loading and instantiation made by good
-        winston2: [{
-            module: 'hapi-good-winston',
-            name: 'goodWinston',
-            args: [winston, goodWinstonOptions],
-        }],
     },
 };
 
-server.register({
-    plugin: require('good'),
-    options,
-}, (err) => {
+const options = {
+    ops: {
+        interval: 1000,
+    },
+    reporters: {
+        // Simple and straight forward usage
+        winston: [goodWinston(logger)],
+        // Adding some customization configuration
+        winstonWithLogLevels: [goodWinston(logger, goodWinstonOptions)],
+        // This example simply illustrates auto loading and instantiation made by good
+        winston2: [
+            {
+                module: 'hapi-good-winston',
+                name: 'goodWinston',
+                args: [logger, goodWinstonOptions],
+            },
+        ],
+    },
+};
 
-    if (err) {
-        return console.error(err);
-    }
-    server.start(() => {
+server
+    .register({
+        plugin: require('good'),
+        options,
+    })
+    .then(() => {
+        return server.start();
+    })
+    .then(() => {
         console.info(`Server started at ${server.info.uri}`);
     });
-
-});
 ```
 
 # Links
 
-- [Hapi](https://github.com/hapijs/hapi)
-- [Good](https://github.com/hapijs/good)
-- [Winston](https://github.com/winstonjs/winston)
+-   [Hapi](https://github.com/hapijs/hapi)
+-   [Good](https://github.com/hapijs/good)
+-   [Winston](https://github.com/winstonjs/winston)
 
 # License
 
