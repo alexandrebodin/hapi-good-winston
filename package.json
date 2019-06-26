@@ -1,6 +1,6 @@
 {
   "name": "hapi-good-winston",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "A hapi good reporter to log events with winston",
   "main": "./dist/index.js",
   "scripts": {
@@ -37,14 +37,14 @@
   },
   "homepage": "https://github.com/alexandrebodin/hapi-good-winston",
   "dependencies": {
-    "good": ">=8.x || 8.0.0-rc1",
-    "hapi": ">=17.x",
+    "@hapi/good": "^8.0",
+    "@hapi/hapi": "^18.0",
     "json-stringify-safe": "^5.0.1",
     "winston": "2.x || 3.x"
   },
   "peerDependencies": {
-    "good": ">=8.x || 8.0.0-rc1",
-    "hapi": ">=17.x",
+    "@hapi/good": "^8.0",
+    "@hapi/hapi": "^18.0",
     "winston": "2.x || 3.x"
   },
   "devDependencies": {
