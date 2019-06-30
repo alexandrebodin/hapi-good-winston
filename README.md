@@ -14,6 +14,10 @@ A good reporter to send and log events with winston
 
 ## Disclaimer
 
+As hapi recently changed npm namespace, Hapi-good-winston `3` only support good >= 8 and hapi >= 18
+
+-   Use `2.*` for version prior to hapi v18
+
 Hapi-good-winston `2` only support good >= 8 and hapi >= 17
 
 -   Use `1.*` for version prior to hapi v17
