@@ -1,6 +1,6 @@
 {
   "name": "hapi-good-winston",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A hapi good reporter to log events with winston",
   "main": "./dist/index.js",
   "scripts": {
