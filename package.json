@@ -38,13 +38,13 @@
   "homepage": "https://github.com/alexandrebodin/hapi-good-winston",
   "dependencies": {
     "@hapi/good": "^8.0",
-    "@hapi/hapi": "^18.0",
+    "@hapi/hapi": "^19.1",
     "json-stringify-safe": "^5.0.1",
     "winston": "2.x || 3.x"
   },
   "peerDependencies": {
     "@hapi/good": "^8.0",
-    "@hapi/hapi": "^18.0",
+    "@hapi/hapi": "^19.1",
     "winston": "2.x || 3.x"
   },
   "devDependencies": {
